@@ -109,7 +109,7 @@ export default function AuthPage({ onLoginSuccess, onGuestLogin }) {
                 <h1 className="text-xl font-bold bg-gradient-to-r from-white via-slate-200 to-indigo-300 bg-clip-text text-transparent">
                   TaskCraft
                 </h1>
-                <p className="text-xs text-indigo-400 font-medium">Student Edition</p>
+                <p className="text-xs text-indigo-400 font-medium">Student Edition of pict collage of pict </p>
               </div>
             </div>
 
