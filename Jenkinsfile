@@ -24,6 +24,7 @@ pipeline {
 
         stage('Check Environment') {
             steps {
+                sh 'whoami'
                 sh 'docker --version'
                 sh 'minikube status'
                 sh 'kubectl config current-context'
@@ -52,6 +53,7 @@ pipeline {
             steps {
                 sh 'kubectl apply -f deployment.yaml'
                 sh 'kubectl apply -f service.yaml'
+                sh 'kubectl rollout restart deployment/task-manager-deployment'
             }
         }
 
