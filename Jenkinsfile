@@ -4,16 +4,26 @@ pipeline {
 
     stages {
 
-        stage('Checkout') {
+        stage('Install Dependencies') {
             steps {
-                git branch: 'main',
-                    url: 'https://github.com/Viscosity-o/Devops-cie.git'
+                sh 'npm install'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                sh 'npm run build'
+            }
+        }
+
+        stage('Automated Testing') {
+            steps {
+                sh 'npm test'
             }
         }
 
         stage('Check Environment') {
             steps {
-                sh 'whoami'
                 sh 'docker --version'
                 sh 'minikube status'
                 sh 'kubectl config current-context'
